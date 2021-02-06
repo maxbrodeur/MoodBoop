@@ -8,11 +8,9 @@ pastTime=0
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     frame_counter= 0
     # Display the resulting frame
     cv2.imshow('frame',frame)
-    cv2.imshow('gray', gray)
     k=cv2.waitKey(1)
     newTime = int (time() % 60)
     if  newTime!=pastTime:
