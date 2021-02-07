@@ -30,6 +30,9 @@ for imagePath in os.listdir("data"):
             crop = cv2.resize(crop, (48, 48))
             crops.append(crop)
 
+        os.unlink("data/" + imagePath)
+
+
 # clear faces directory
 for face in os.listdir("faces"):
     os.unlink("faces/" + face)
