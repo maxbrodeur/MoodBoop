@@ -1,10 +1,9 @@
 import os
-
 import cv2
 import numpy as np
+import model
 
 path = "/Users/maxbrodeur/Documents/Training/NewData"
-
 train_data = []
 arousal = []
 valence = []
@@ -30,12 +29,4 @@ for dir in os.listdir(path):
             train_data.append(image)
             
         count = count + 1
-
-
-
-
-
-
-
-
-
+model.train_model(train_data, valence, arousal)

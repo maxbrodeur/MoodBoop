@@ -13,9 +13,6 @@ batch_size = 100
 x_size = 200
 y_size = 300
 
-
-
-
 model = Sequential()
 model.add(BatchNormalization(input_shape=(y_size, x_size)))
 model.add(AveragePooling1D())
@@ -33,7 +30,8 @@ model_arousal = model.add(Dense(1, activation='tanh'))
 
 
 # training the model
-model_valence.compile(optimizer='adam', loss='MSE', metrics=["accuracy"])
-model_valence.fit(train_input, valence, batch_size=batch_size, epochs=100)
-model_arousal.compile(optimizer='adam', loss='MSE', metrics=["accuracy"])
-model_arousal.fit(train_input, arousal, batch_size=batch_size, epochs=100)
+def train_model(train_input, valence, arousal):
+    model_valence.compile(optimizer='adam', loss='MSE', metrics=["accuracy"])
+    model_valence.fit(train_input, valence, batch_size=batch_size, epochs=100)
+    model_arousal.compile(optimizer='adam', loss='MSE', metrics=["accuracy"])
+    model_arousal.fit(train_input, arousal, batch_size=batch_size, epochs=100)
