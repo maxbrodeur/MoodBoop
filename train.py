@@ -20,6 +20,7 @@ for dir in os.listdir(path):
         if os.isfile(framePath):
             values = x.split(",")
             matrix = np.array(values, 'float32')
+            matrix /= 255
             # valence and arousal values
             valence.append(matrix[0])
             arousal.append(matrix[1])
@@ -29,6 +30,7 @@ for dir in os.listdir(path):
             train_data.append(image)
             
         count = count + 1
+
 
 
 
