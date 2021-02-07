@@ -1,7 +1,8 @@
 import os
-
 import cv2
 import numpy as np
+
+# salut karl
 
 path = "/Users/maxbrodeur/Documents/Training/NewData"
 
